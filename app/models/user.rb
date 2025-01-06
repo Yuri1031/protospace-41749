@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :encrypted_password, presence: true
 
-  has_many :prototype
-  has_many :comment
+  has_many :prototypes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end
